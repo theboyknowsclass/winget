@@ -40,6 +40,5 @@ You don't need to install these yourself:
 - **ENE / WD P40 Game Drive / Verbatim SureFire HALs** are RGB device plugins installed by GIGABYTE Control Center's RGB module
 - **Local AI Manager, Office Actions Server, push notifications** come with Microsoft 365
 - **Virtual Desktop Service** comes with Virtual Desktop Streamer
-- **WinFsp** comes with Bitvise SSH Client
 - **iCloud Outlook** comes with iCloud
 - Store/built-in apps (Photos, Calculator, Snipping Tool, codec extensions, etc.) come with Windows
