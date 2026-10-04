@@ -15,19 +15,6 @@
         },
         {
           "id": "Microsoft.365Copilot"
-        },
-        {
-          "id": "9NBLGGH5R558",
-          "source": "msstore",
-          "name": "Microsoft To Do"
-        },
-        {
-          "id": "9NBLGGH4QGHW",
-          "source": "msstore",
-          "name": "Microsoft Sticky Notes"
-        },
-        {
-          "id": "Microsoft.PowerAutomateDesktop"
         }
       ]
     },
@@ -41,18 +28,12 @@
           "id": "Google.Chrome"
         },
         {
-          "id": "Brave.Brave"
-        },
-        {
           "id": "9PKTQ5699M62",
           "source": "msstore",
           "name": "iCloud"
         },
         {
           "id": "Notepad++.Notepad++"
-        },
-        {
-          "id": "VideoLAN.VLC"
         },
         {
           "id": "Anthropic.Claude"
@@ -62,9 +43,6 @@
     "communication": {
       "description": "Chat and meetings",
       "packages": [
-        {
-          "id": "Zoom.Zoom"
-        },
         {
           "id": "OpenWhisperSystems.Signal"
         },
@@ -88,9 +66,6 @@
           "id": "Microsoft.VisualStudioCode"
         },
         {
-          "id": "JetBrains.PyCharm"
-        },
-        {
           "id": "Google.AndroidStudio"
         },
         {
@@ -98,9 +73,6 @@
         },
         {
           "id": "astral-sh.uv"
-        },
-        {
-          "id": "AivarAnnamaa.Thonny"
         },
         {
           "id": "OpenJS.NodeJS"
@@ -136,12 +108,10 @@
           "id": "Mobatek.MobaXterm"
         },
         {
-          "id": "Microsoft.WindowsADK"
+          "id": "Chocolatey.Chocolatey"
         },
         {
-          "id": "9N58QRW40DFW",
-          "source": "msstore",
-          "name": "Windows Performance Analyzer (Preview)"
+          "id": "Chocolatey.ChocolateyGUI"
         }
       ]
     },
@@ -193,9 +163,6 @@
           "id": "Ookla.Speedtest.Desktop"
         },
         {
-          "id": "memstechtips.Winhance"
-        },
-        {
           "id": "9NKJ1F6L3SMT",
           "source": "msstore",
           "name": "Duplicate Media Finder"
@@ -233,6 +200,21 @@
         },
         {
           "id": "EPSON.SoftwareUpdater"
+        },
+        {
+          "id": "EPSON.EventManager"
+        },
+        {
+          "id": "EPSON.Scan.OCRComponent"
+        },
+        {
+          "id": "EPSON.EpsonNetPrint"
+        },
+        {
+          "id": "EPSON.PrinterConnectionChecker"
+        },
+        {
+          "id": "EPSON.PrinterDriverSecuritySupportTool"
         }
       ]
     },
@@ -252,9 +234,6 @@
         },
         {
           "id": "EpicGames.EpicGamesLauncher"
-        },
-        {
-          "id": "Meta.Oculus"
         },
         {
           "id": "VirtualDesktop.Streamer"

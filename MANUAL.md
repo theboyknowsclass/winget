@@ -20,11 +20,8 @@ after running `setup.ps1`.
 
 | Software | Where to get it | Notes |
 |---|---|---|
-| Corsair Device Control Service | [corsair.com/downloads](https://www.corsair.com/downloads) | Comes with Corsair device firmware/iCUE. For full iCUE: `winget install Corsair.iCUE.5` |
+| Corsair Device Control Service | [corsair.com/downloads](https://www.corsair.com/downloads) | Only if you have Corsair hardware (RAM, cooler, fans). May also be pulled in by GIGABYTE Control Center's RGB module. For full iCUE: `winget install Corsair.iCUE.5` |
 | Epson ET-5170 printer driver + PC-FAX / FAX Utility | [epson.com support](https://epson.com/Support/sl/s) | Epson scan/connect tools are in the `hardware` group |
-| WD P40 Game Drive | [wd.com support](https://support-en.wd.com/) | RGB control for the external SSD |
-| Verbatim SureFire Gaming | Verbatim support site | Peripheral software |
-| ENE Video Capture Box HAL / ENE_X_AIC_HAL | Comes with capture box / RGB hardware | Usually installed by the vendor's tool |
 
 ## Apps
 
@@ -39,6 +36,8 @@ after running `setup.ps1`.
 You don't need to install these yourself:
 
 - **Logi Plugin Service** comes with Logi Options+
+- **ENE / WD P40 Game Drive / Verbatim SureFire HALs** are RGB device plugins installed by GIGABYTE Control Center's RGB module
+- **Local AI Manager, Office Actions Server, push notifications** come with Microsoft 365
 - **Virtual Desktop Service** comes with Virtual Desktop Streamer
 - **WinFsp** comes with Bitvise SSH Client
 - **iCloud Outlook** comes with iCloud
