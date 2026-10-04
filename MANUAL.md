@@ -21,6 +21,7 @@ after running `setup.ps1`.
 | Software | Where to get it | Notes |
 |---|---|---|
 | Corsair Device Control Service | [corsair.com/downloads](https://www.corsair.com/downloads) | Only if you have Corsair hardware (RAM, cooler, fans). May also be pulled in by GIGABYTE Control Center's RGB module. For full iCUE: `winget install Corsair.iCUE.5` |
+| L-Connect 3 **beta** (2.x, OpenRGB support) | [lian-li.com/l-connect3](https://lian-li.com/l-connect3/) | Lian Li fans/RGB. winget only has the old stable 1.6.30 (`LianLi.LConnect3`), so install the beta by hand |
 | Epson ET-5170 printer driver + PC-FAX / FAX Utility | [epson.com support](https://epson.com/Support/sl/s) | Epson scan/connect tools are in the `hardware` group |
 
 ## Apps
