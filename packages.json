@@ -1,0 +1,117 @@
+{
+  "$comment": "Packages grouped by category. Each entry is a winget package id; add \"source\": \"msstore\" for Microsoft Store apps. Find ids with: winget search <name>",
+  "groups": {
+    "core": {
+      "description": "Browsers, shell and everyday essentials",
+      "packages": [
+        { "id": "Microsoft.PowerShell" },
+        { "id": "Microsoft.WindowsTerminal" },
+        { "id": "Google.Chrome" },
+        { "id": "Brave.Brave" },
+        { "id": "Microsoft.OneDrive" },
+        { "id": "9PKTQ5699M62", "source": "msstore", "name": "iCloud" },
+        { "id": "Notepad++.Notepad++" },
+        { "id": "VideoLAN.VLC" },
+        { "id": "Anthropic.Claude" }
+      ]
+    },
+    "productivity": {
+      "description": "Office, mail and notes",
+      "packages": [
+        { "id": "Microsoft.Outlook" },
+        { "id": "Microsoft.365Copilot" },
+        { "id": "9NBLGGH5R558", "source": "msstore", "name": "Microsoft To Do" },
+        { "id": "9NBLGGH4QGHW", "source": "msstore", "name": "Microsoft Sticky Notes" },
+        { "id": "Microsoft.PowerAutomateDesktop" }
+      ]
+    },
+    "communication": {
+      "description": "Chat and meetings",
+      "packages": [
+        { "id": "Zoom.Zoom" },
+        { "id": "OpenWhisperSystems.Signal" },
+        { "id": "9NKSQGP7F2NH", "source": "msstore", "name": "WhatsApp" }
+      ]
+    },
+    "dev": {
+      "description": "Languages, editors and developer tooling",
+      "packages": [
+        { "id": "Git.Git" },
+        { "id": "GitHub.cli" },
+        { "id": "Microsoft.VisualStudioCode" },
+        { "id": "JetBrains.PyCharm" },
+        { "id": "Google.AndroidStudio" },
+        { "id": "Python.Python.3.13" },
+        { "id": "astral-sh.uv" },
+        { "id": "AivarAnnamaa.Thonny" },
+        { "id": "OpenJS.NodeJS" },
+        { "id": "Microsoft.DotNet.SDK.8" },
+        { "id": "Microsoft.DotNet.SDK.10" },
+        { "id": "Docker.DockerDesktop" },
+        { "id": "Microsoft.WSL" },
+        { "id": "Canonical.Ubuntu.2204" },
+        { "id": "Ollama.Ollama" },
+        { "id": "ShiningLight.OpenSSL.Light" },
+        { "id": "Gyan.FFmpeg" },
+        { "id": "Bitvise.SSH.Client" },
+        { "id": "Mobatek.MobaXterm" },
+        { "id": "Microsoft.WindowsADK" },
+        { "id": "9N58QRW40DFW", "source": "msstore", "name": "Windows Performance Analyzer (Preview)" }
+      ]
+    },
+    "maker": {
+      "description": "CAD, 3D printing, graphics and SBC tools",
+      "packages": [
+        { "id": "Autodesk.Fusion" },
+        { "id": "Bambulab.Bambustudio" },
+        { "id": "Inkscape.Inkscape" },
+        { "id": "dotPDN.PaintDotNet" },
+        { "id": "RaspberryPiFoundation.RaspberryPiImager" },
+        { "id": "Balena.Etcher" }
+      ]
+    },
+    "utilities": {
+      "description": "System monitoring, tweaking and automation",
+      "packages": [
+        { "id": "AutoHotkey.AutoHotkey" },
+        { "id": "Rainmeter.Rainmeter" },
+        { "id": "REALiX.HWiNFO" },
+        { "id": "CrystalDewWorld.CrystalDiskInfo" },
+        { "id": "CrystalDewWorld.CrystalDiskMark" },
+        { "id": "Rufus.Rufus" },
+        { "id": "Ookla.Speedtest.Desktop" },
+        { "id": "memstechtips.Winhance" },
+        { "id": "9NKJ1F6L3SMT", "source": "msstore", "name": "Duplicate Media Finder" }
+      ]
+    },
+    "hardware": {
+      "description": "GPU, case/RGB and peripheral software",
+      "packages": [
+        { "id": "XP8CLZL93F5Z4P", "source": "msstore", "name": "NVIDIA App" },
+        { "id": "LianLi.LConnect3" },
+        { "id": "Logitech.OptionsPlus" },
+        { "id": "Philips.HueSync" },
+        { "id": "Ubiquiti.IdentityDesktop.Endpoint" },
+        { "id": "EPSON.EpsonConnectPrinterSetup" },
+        { "id": "EPSON.ScanSmart" },
+        { "id": "EPSON.EpsonScan2" },
+        { "id": "EPSON.SoftwareUpdater" }
+      ]
+    },
+    "media": {
+      "description": "Music server",
+      "packages": [
+        { "id": "RoonLabs.RoonServer" }
+      ]
+    },
+    "gaming": {
+      "description": "Game launchers and VR",
+      "packages": [
+        { "id": "Valve.Steam" },
+        { "id": "EpicGames.EpicGamesLauncher" },
+        { "id": "Meta.Oculus" },
+        { "id": "VirtualDesktop.Streamer" }
+      ]
+    }
+  }
+}

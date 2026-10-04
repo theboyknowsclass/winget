@@ -1,0 +1,45 @@
+# Manual installs
+
+Software on this machine that winget can't install (not in the winget or
+Microsoft Store catalogs, or it's a hardware driver). Install these by hand
+after running `setup.ps1`.
+
+## Drivers and motherboard (GIGABYTE / AMD)
+
+| Software | Where to get it | Notes |
+|---|---|---|
+| AMD Chipset Software | [amd.com/support](https://www.amd.com/en/support/download/drivers.html) | Install first, before other drivers |
+| AMD Software (Adrenalin) / Radeon Software | [amd.com/support](https://www.amd.com/en/support/download/drivers.html) | Only needed for the CPU's integrated graphics |
+| AMD Ryzen Master | [amd.com/ryzen-master](https://www.amd.com/en/products/software/ryzen-master.html) | Optional, for tuning |
+| GIGABYTE Control Center | GIGABYTE motherboard support page | Pulls in GBT RGB / Dynamic Lighting / Performance / Storage libraries, Wi-Fi Compass and A.I. Snatch |
+| Realtek Audio Driver + Audio Control | GIGABYTE motherboard support page | Audio Control app comes with the driver |
+| Realtek Ethernet Controller Driver | GIGABYTE motherboard support page | Windows Update usually covers it |
+| NVIDIA Graphics Driver | Installed through **NVIDIA App** (`hardware` group) | Includes HD Audio driver and FrameView SDK |
+
+## Peripherals and devices
+
+| Software | Where to get it | Notes |
+|---|---|---|
+| Corsair Device Control Service | [corsair.com/downloads](https://www.corsair.com/downloads) | Comes with Corsair device firmware/iCUE. For full iCUE: `winget install Corsair.iCUE.5` |
+| Epson ET-5170 printer driver + PC-FAX / FAX Utility | [epson.com support](https://epson.com/Support/sl/s) | Epson scan/connect tools are in the `hardware` group |
+| WD P40 Game Drive | [wd.com support](https://support-en.wd.com/) | RGB control for the external SSD |
+| Verbatim SureFire Gaming | Verbatim support site | Peripheral software |
+| ENE Video Capture Box HAL / ENE_X_AIC_HAL | Comes with capture box / RGB hardware | Usually installed by the vendor's tool |
+
+## Apps
+
+| Software | Where to get it | Notes |
+|---|---|---|
+| Microsoft 365 (Family/Personal) | [microsoft365.com](https://www.microsoft365.com/) → Install apps | `Microsoft.Office` in winget is the enterprise build |
+| Makera Studio | [makera.com](https://www.makera.com/) | Makera CNC software |
+| GridfinityGenerator | Original source | Not in any public catalog |
+
+## Installed automatically by something else
+
+You don't need to install these yourself:
+
+- **Logi Plugin Service** comes with Logi Options+
+- **Virtual Desktop Service** comes with Virtual Desktop Streamer
+- **WinFsp** comes with Bitvise SSH Client
+- **iCloud Outlook** comes with iCloud
+- Store/built-in apps (Photos, Calculator, Snipping Tool, codec extensions, etc.) come with Windows
