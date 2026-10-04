@@ -41,8 +41,13 @@ Re-running `setup.ps1` is safe because already-installed apps are skipped.
 .\setup.ps1 -WhatIf                 # dry run: show what would be installed
 ```
 
-Groups: `core`, `productivity`, `communication`, `dev`, `maker`, `utilities`,
+Groups: `windows`, `core`, `communication`, `dev`, `maker`, `utilities`,
 `hardware`, `media`, `gaming`.
+
+The `windows` group holds apps that ship with Windows 11 (Terminal, OneDrive, Outlook,
+To Do, etc.). On a normal install they're already there and get skipped; they're
+listed so they come back if a debloat tool like Winhance removed them. Skip them with
+`-Exclude windows`.
 
 ## Keeping the list up to date
 
