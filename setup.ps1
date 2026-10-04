@@ -53,30 +53,62 @@ function Test-Installed($p, $source) {
     $LASTEXITCODE -eq 0
 }
 
-$installed = @(); $skipped = @(); $failed = @()
+function Get-InstalledVersion($id) {
+    $line = ($snapshot -split "`r?`n") | Where-Object { $_ -match "\s$([regex]::Escape($id))\s" } | Select-Object -First 1
+    if ($line -match "\s$([regex]::Escape($id))\s+(\d+(\.\d+){1,3})") { $Matches[1] }
+}
+
+function Get-LatestVersion($id, $source) {
+    $info = winget show --id $id --exact --source $source --accept-source-agreements --disable-interactivity 2>$null | Out-String
+    if ($info -match '(?m)^Version:\s*(\d+(\.\d+){1,3})') { $Matches[1] }
+}
+
+$installed = @(); $upgraded = @(); $skipped = @(); $failed = @()
 
 foreach ($g in $selected) {
-    Write-Host "`n=== $g — $($groups.$g.description) ===" -ForegroundColor Cyan
+    Write-Host "`n=== $g - $($groups.$g.description) ===" -ForegroundColor Cyan
     foreach ($p in $groups.$g.packages) {
         $source = if ($p.source) { $p.source } else { 'winget' }
         $label = if ($p.name) { "$($p.name) [$($p.id)]" } else { $p.id }
 
+        # Optional per-package installer settings from packages.json
+        $extra = @()
+        if ($p.installerType) { $extra += '--installer-type', $p.installerType }
+        if ($p.custom) { $extra += '--custom', $p.custom }
+
         if (Test-Installed $p $source) {
-            Write-Host "  = $label (already installed)" -ForegroundColor DarkGray
-            $skipped += $label
+            if (-not $p.alwaysLatest) {
+                Write-Host "  = $label (already installed)" -ForegroundColor DarkGray
+                $skipped += $label
+                continue
+            }
+            # Compare versions ourselves: `winget upgrade --id` can't find some packages
+            # (e.g. Microsoft.PowerShell) even though `winget list` shows them.
+            $have = Get-InstalledVersion $p.id
+            $latest = Get-LatestVersion $p.id $source
+            if ($have -and $latest -and ([version]$have -ge [version]$latest)) {
+                Write-Host "  = $label ($have is the latest)" -ForegroundColor DarkGray
+                $skipped += $label
+                continue
+            }
+            if (-not $PSCmdlet.ShouldProcess($label, "winget upgrade $have -> $latest")) { continue }
+            Write-Host "  ^ $label ($have -> $latest)" -ForegroundColor Yellow
+            winget install --id $p.id --exact --source $source --silent @extra `
+                --accept-package-agreements --accept-source-agreements --disable-interactivity
+            if ($LASTEXITCODE -eq 0) { $upgraded += $label } else { $failed += "$label (upgrade exit $LASTEXITCODE)" }
             continue
         }
 
         if (-not $PSCmdlet.ShouldProcess($label, 'winget install')) { continue }
 
         Write-Host "  + $label" -ForegroundColor Green
-        winget install --id $p.id --exact --source $source --silent `
+        winget install --id $p.id --exact --source $source --silent @extra `
             --accept-package-agreements --accept-source-agreements --disable-interactivity
         if ($LASTEXITCODE -eq 0) { $installed += $label } else { $failed += "$label (exit $LASTEXITCODE)" }
     }
 }
 
-Write-Host "`nInstalled: $($installed.Count)  Already present: $($skipped.Count)  Failed: $($failed.Count)" -ForegroundColor Cyan
+Write-Host "`nInstalled: $($installed.Count)  Upgraded: $($upgraded.Count)  Already current: $($skipped.Count)  Failed: $($failed.Count)" -ForegroundColor Cyan
 if ($failed) {
     Write-Host 'Failures:' -ForegroundColor Red
     $failed | ForEach-Object { Write-Host "  $_" -ForegroundColor Red }

@@ -56,7 +56,7 @@ if ($untracked) { $untracked | Format-Table Id, Name, Source -AutoSize | Out-Hos
 
 if ($All) {
     foreach ($s in 'ARP', 'MSIX') {
-        Write-Host "Not matched to a winget package ($s) — try 'winget search <name>', else add to MANUAL.md:" -ForegroundColor Cyan
+        Write-Host "Not matched to a winget package ($s) - try 'winget search <name>', else add to MANUAL.md:" -ForegroundColor Cyan
         $rows | Where-Object Source -eq $s | ForEach-Object { "  $($_.Name)" } | Sort-Object -Unique
         ''
     }

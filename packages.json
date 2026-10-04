@@ -1,5 +1,5 @@
 {
-  "$comment": "Packages grouped by category. Each entry is a winget package id; add \"source\": \"msstore\" for Microsoft Store apps. Find ids with: winget search <name>",
+  "$comment": "Packages grouped by category. Each entry is a winget package id; add \"source\": \"msstore\" for Microsoft Store apps. Optional: \"installerType\" and \"custom\" (extra installer args) are passed to winget; \"alwaysLatest\": true upgrades the package on every run instead of skipping it. Find ids with: winget search <name>",
   "groups": {
     "windows": {
       "description": "Ships with Windows 11; only installed if missing (e.g. removed by a debloat tool)",
@@ -22,7 +22,10 @@
       "description": "Browsers, shell and everyday essentials",
       "packages": [
         {
-          "id": "Microsoft.PowerShell"
+          "id": "Microsoft.PowerShell",
+          "installerType": "wix",
+          "custom": "USE_MU=1 ENABLE_MU=1",
+          "alwaysLatest": true
         },
         {
           "id": "Google.Chrome"

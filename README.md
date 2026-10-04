@@ -70,6 +70,21 @@ Store apps use their Store ID with `"source": "msstore"`:
 
 If an app isn't in either catalog, add it to `MANUAL.md` instead.
 
+### Optional package settings
+
+| Field | Effect |
+|---|---|
+| `installerType` | Force an installer type, e.g. `"wix"` for the MSI |
+| `custom` | Extra arguments passed to the installer |
+| `alwaysLatest` | Upgrade to the newest version on every run instead of skipping when installed |
+
+PowerShell 7 uses all three: it installs from the MSI with Microsoft Update turned on, so
+new releases come through Windows Update, and every `setup.ps1` run also checks for a newer version:
+
+```json
+{ "id": "Microsoft.PowerShell", "installerType": "wix", "custom": "USE_MU=1 ENABLE_MU=1", "alwaysLatest": true }
+```
+
 ### What the audit categories mean
 
 - **winget / msstore**: winget has matched the app to a catalog package and can install or upgrade it.
