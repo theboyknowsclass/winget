@@ -7,6 +7,8 @@ Scripts to rebuild my Windows machine with [winget](https://learn.microsoft.com/
 | [`packages.json`](packages.json) | Apps to install, grouped by category (winget and Microsoft Store) |
 | [`setup.ps1`](setup.ps1) | Installs everything in `packages.json`, skipping anything already installed |
 | [`audit.ps1`](audit.ps1) | Compares installed software against `packages.json` to keep the list up to date |
+| [`post-install.ps1`](post-install.ps1) | Configures what winget can't: WSL, Claude Code, git, npm, uv tools, VS Code extensions, Ollama, the Fusion 360 MCP bridge and fonts |
+| [`config/`](config/) | Settings used by `post-install.ps1` |
 | [`MANUAL.md`](MANUAL.md) | Drivers and apps winget can't install, with where to get them |
 
 ## Setting up a new machine
@@ -27,7 +29,18 @@ Scripts to rebuild my Windows machine with [winget](https://learn.microsoft.com/
    .\setup.ps1
    ```
 
-4. Work through [`MANUAL.md`](MANUAL.md), starting with chipset and GPU drivers.
+4. Run the post-install configuration. Run it from an **admin** terminal so it can turn on WSL;
+   a restart may be needed afterwards:
+
+   ```powershell
+   .\post-install.ps1
+   ```
+
+   Use `-Only`/`-Skip` to pick steps (`wsl`, `claude`, `git`, `npm`, `uv`, `vscode`,
+   `ollama`, `fusion`, `fonts`) and `-WhatIf` for a dry run. `-Skip ollama` avoids the
+   ~17 GB model download.
+
+5. Work through [`MANUAL.md`](MANUAL.md), starting with chipset and GPU drivers.
 
 Some installers ask for UAC elevation as they go, so stay near the machine.
 Re-running `setup.ps1` is safe because already-installed apps are skipped.

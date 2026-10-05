@@ -1,0 +1,42 @@
+{
+  "git": {
+    "user.name": "Gautam Bhatnagar",
+    "user.email": "g@theboyknowsclass.com",
+    "init.defaultBranch": "main",
+    "core.autocrlf": "false",
+    "core.eol": "lf",
+    "pull.rebase": "false"
+  },
+  "npm": {
+    "prefix": "D:\\npm-global",
+    "cache": "D:\\npm-cache"
+  },
+  "uvTools": [
+    "specify-cli"
+  ],
+  "ollama": {
+    "env": {
+      "OLLAMA_FLASH_ATTENTION": "1",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0"
+    },
+    "pull": [ "qwen3.8:27b" ],
+    "create": { "qwen-128k": "config/ollama/qwen-128k.Modelfile" }
+  },
+  "fusionBridge": {
+    "repo": "https://github.com/theboyknowsclass/fusion360-mcp-bridge.git",
+    "upstream": "https://github.com/ndoo/fusion360-mcp-bridge.git",
+    "path": "D:\\Repos\\fusion360-mcp-bridge",
+    "python": "3.13"
+  },
+  "fonts": [
+    {
+      "name": "Ubuntu Mono",
+      "urls": [
+        "https://github.com/google/fonts/raw/main/ufl/ubuntumono/UbuntuMono-Regular.ttf",
+        "https://github.com/google/fonts/raw/main/ufl/ubuntumono/UbuntuMono-Bold.ttf",
+        "https://github.com/google/fonts/raw/main/ufl/ubuntumono/UbuntuMono-Italic.ttf",
+        "https://github.com/google/fonts/raw/main/ufl/ubuntumono/UbuntuMono-BoldItalic.ttf"
+      ]
+    }
+  ]
+}

@@ -31,6 +31,16 @@ after running `setup.ps1`.
 | Microsoft 365 (Family/Personal) | [microsoft365.com](https://www.microsoft365.com/) → Install apps | `Microsoft.Office` in winget is the enterprise build |
 | Makera Studio | [makera.com](https://www.makera.com/) | Makera CNC software |
 | GridfinityGenerator | Original source | Not in any public catalog |
+| ITC Avant Garde Std XLt font | Your own licensed copy | Commercial font, can't be redistributed. Ubuntu Mono is installed by `post-install.ps1` |
+
+## Data to back up before wiping
+
+| What | How |
+|---|---|
+| WSL Ubuntu distro | `wsl --export Ubuntu ubuntu.tar`, then `wsl --import` on the new machine |
+| SSH / signing keys | Copy somewhere private. Never into this repo |
+| `~\.fusion-mcp-secret` | No need. `post-install.ps1` generates a new one |
+| VS Code settings | Turn on Settings Sync (extensions are reinstalled by `post-install.ps1`) |
 
 ## Installed automatically by something else
 
